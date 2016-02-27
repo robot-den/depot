@@ -1,4 +1,14 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+one:
+  title: MyTitle
+  description: MyDescription
+  image_url: image.png
+  price: 9.99
+two:
+  title: MyTitle
+  description: MyDescription
+  image_url: image.png
+  price: 9.99
 
 ruby:
   title: Programming Ruby 1.9
