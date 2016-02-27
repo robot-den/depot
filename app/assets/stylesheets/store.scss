@@ -5,8 +5,12 @@
     font: 150% sans-serif;
     color: #226;
     border-bottom : 3px dotted #77d;
+    .counter {
+      color: #bbf;
+      font-size: small;
+    }
   }
-/* Запись в каталоге s to re */
+/* Запись в каталоге store */
   .entry {
     overflow: auto;
     margin-top: 1em;
@@ -35,6 +39,9 @@
       color: #44a;
       font-weight: bold;
       margin-right: 3em;
+    }
+    form, div {
+      display: inline;
     }
   }
 }
