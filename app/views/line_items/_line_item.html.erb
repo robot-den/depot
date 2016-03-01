@@ -1,6 +1,11 @@
+<% if line_item == @line_item %>
+  <tr id='current_item'>
+<% else %>
 <tr>
+<% end %>
   <td><%= line_item.quantity %> &times;</td>
   <td><%= line_item.product.title %></td>
   <td class='total_cell'><%= number_to_currency(line_item.total_price) %></td>
-  <td><%= button_to 'Delete', line_item, method: :delete, confirm: 'Are you sure?' %></td>
+  <td><%= button_to 'x', line_item, method: :delete, confirm: 'Are you sure?', name: 'delete_all', remote: true %></td>
+  <td><%= button_to '-', line_item, method: :delete, confirm: 'Are you sure?', remote: true %></td>
 </tr>
