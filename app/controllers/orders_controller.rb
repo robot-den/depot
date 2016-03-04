@@ -41,6 +41,7 @@ class OrdersController < ApplicationController
       if @order.save
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
+        OrderNotifier.received(@order).deliver_later
         format.html { redirect_to store_url, notice: 'Thank you for your order.' }
         format.json { render json @order, status: :created, location: @order }
       else
@@ -54,6 +55,7 @@ class OrdersController < ApplicationController
   # PATCH/PUT /orders/1
   # PATCH/PUT /orders/1.json
   def update
+    # здесь могла быть отправка почты если поле ship_date обновилось
     respond_to do |format|
       if @order.update(order_params)
         format.html { redirect_to @order, notice: 'Order was successfully updated.' }
